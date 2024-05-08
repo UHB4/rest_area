@@ -10,7 +10,7 @@ const LocationTracker = () => {
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(position => {
             const { latitude, longitude } = position.coords;
-            axios.post('http://localhost:5000/location', { latitude, longitude })
+            axios.post('http://13.125.136.48:5000/location', { latitude, longitude })
                 .then(response => {
                     setStations(response.data.stations); // 충전소 정보 상태 업데이트
                 })

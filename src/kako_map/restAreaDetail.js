@@ -15,7 +15,7 @@ function RestAreaDetail({ selectedRoute }) {
 
     useEffect(() => {
         if (selectedRoute) {
-            axios.get(`http://localhost:5000/restareas?route=${selectedRoute}`)
+            axios.get(`http://13.125.136.48:5000/restareas?route=${selectedRoute}`)
                 .then(response => {
                     setRestAreas(response.data);
                     if (response.data.length > 0) {
@@ -36,10 +36,10 @@ function RestAreaDetail({ selectedRoute }) {
         const normalizedAreaName = normalizeName(area.휴게소명);
 
         Promise.all([
-            axios.get(`http://localhost:5000/restbrands?routeNm=${selectedRoute}`),
-            axios.get(`http://localhost:5000/fuelprices?routeNm=${selectedRoute}`),
-            axios.get(`http://localhost:5000/facilities?routeNm=${selectedRoute}`),
-            axios.get(`http://localhost:5000/bestfoods?routeNm=${selectedRoute}`)
+            axios.get(`http://13.125.136.48:5000/restbrands?routeNm=${selectedRoute}`),
+            axios.get(`http://13.125.136.48:5000/fuelprices?routeNm=${selectedRoute}`),
+            axios.get(`http://13.125.136.48:5000/facilities?routeNm=${selectedRoute}`),
+            axios.get(`http://13.125.136.48:5000/bestfoods?routeNm=${selectedRoute}`)
         ]).then(([brandResponse, fuelResponse, facilityResponse, bestFoodResponse]) => {
             const brandData = brandResponse.data.list;
             const fuelData = fuelResponse.data.list;

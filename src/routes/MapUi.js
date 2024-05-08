@@ -39,7 +39,7 @@ function MapUi() {
     const fetchStationsWithRadius = (radiusValue) => {
         navigator.geolocation.getCurrentPosition(position => {
             const {latitude, longitude} = position.coords;
-            axios.post('http://localhost:5000/get-stations', {
+            axios.post('http://13.125.136.48:5000/get-stations', {
                 latitude,
                 longitude,
                 radius: radiusValue * 1000,
@@ -77,7 +77,7 @@ function MapUi() {
             });
 
             const { latitude, longitude } = position.coords;
-            const response = await axios.post('http://localhost:3001/find-stations', {
+            const response = await axios.post('http://13.125.136.48:3000/find-stations', {
                 latitude,
                 longitude,
                 radius: radius * 1000 // 미터 단위로 변환하여 서버로 전송

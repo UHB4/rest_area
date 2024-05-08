@@ -13,7 +13,7 @@ function CreatePost(props) {
 
 
     useEffect(() => {
-        axios.get('http://localhost:3001/session', { withCredentials: true })
+        axios.get('http://13.125.136.48:3000/session', { withCredentials: true })
             .then(response => {
                 if (response.data.loggedIn) {
                     setUserRealName(response.data.userRealName);

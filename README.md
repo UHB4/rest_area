@@ -52,6 +52,7 @@
 ![image](./readmeImg/메인화면검색.png)   
 메인화면에서 고속도로를 선택하고 검색을 누름.
 
+
 ![image](./readmeImg/동해.png)  
 선택한 해당 노선에 있는 휴게소 리스트가 나오고 맵에 마커로 표시
 ![image](./readmeImg/주유소찾기.png)   

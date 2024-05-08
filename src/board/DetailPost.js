@@ -12,7 +12,7 @@ function DetailPost(props) {
 
     //////delet post요청/////
     const handleDeletePost = () => {
-        axios.post(`http://localhost:3001/deletePost/${detailPostData.post?.id}`, null, { withCredentials: true })
+        axios.post(`http://13.125.136.48:3000/deletePost/${detailPostData.post?.id}`, null, { withCredentials: true })
             .then(res => {
                 // 성공적으로 삭제된 경우 처리할 내용
                 console.log('게시물이 성공적으로 삭제되었습니다.');
@@ -33,7 +33,7 @@ function DetailPost(props) {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/detailPost/${id}`,{withCredentials: true} )
+        axios.get(`http://13.125.136.48:3000/detailPost/${id}`,{withCredentials: true} )
             .then(res => {
                 // console.log('데이터 확인: ', res.data.currentPage);
                 // console.log(res);

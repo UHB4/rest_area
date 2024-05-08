@@ -7,7 +7,7 @@ function SearchOilCharge() {
     const [Forwardings, setForwarding] = useState('');
     const [selectedArea, setSelectedArea] = useState('');
     const handleSearch = () => {
-        axios.get('http://localhost:5000/api/search', {
+        axios.get('http://13.125.136.48:5000/api/search', {
             params: {
                 code: 'F240409104',
                 out: 'json',

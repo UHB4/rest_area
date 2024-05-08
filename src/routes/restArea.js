@@ -29,15 +29,15 @@ function RestArea() {
     useEffect(() => {
         console.log("Fetching rest areas for route:", selectedRoute);
         if (selectedRoute) {
-            axios.get(`http://localhost:5000/restareas?route=${selectedRoute}`)
+            axios.get(`http://13.125.136.48:5000/restareas?route=${selectedRoute}`)
                 .then(response => {
                     const areas = response.data;
                     console.log("Fetched rest areas:", areas);
                     Promise.all([
-                        axios.get(`http://localhost:5000/restbrands?routeNm=${selectedRoute}`),
-                        axios.get(`http://localhost:5000/fuelprices?routeNm=${selectedRoute}`),
-                        axios.get(`http://localhost:5000/facilities?routeNm=${selectedRoute}`),
-                        axios.get(`http://localhost:5000/bestfoods?routeNm=${selectedRoute}`)
+                        axios.get(`http://13.125.136.48:5000/restbrands?routeNm=${selectedRoute}`),
+                        axios.get(`http://13.125.136.48:5000/fuelprices?routeNm=${selectedRoute}`),
+                        axios.get(`http://13.125.136.48:5000/facilities?routeNm=${selectedRoute}`),
+                        axios.get(`http://13.125.136.48:5000/bestfoods?routeNm=${selectedRoute}`)
                     ]).then(([brandResponse, fuelResponse, facilityResponse, bestFoodResponse]) => {
                         console.log("Fetched brand data:", brandResponse.data);
                         console.log("Fetched fuel data:", fuelResponse.data);

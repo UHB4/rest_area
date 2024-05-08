@@ -13,7 +13,7 @@ function Statistics() {
     const fetchLocationAndData = () => {
         navigator.geolocation.getCurrentPosition(position => {
             const { latitude, longitude } = position.coords;
-            axios.post('http://localhost:5000/api/gas-stations', {
+            axios.post('http://13.125.136.48:5000/api/gas-stations', {
                 latitude,
                 longitude
             })

@@ -23,7 +23,7 @@ import Chatbot from "./chatbot/chat";
 
 
 // Axios 글로벌 설정
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'http://13.125.136.48:3000';
 // axios.defaults.withCredentials = false;
 axios.defaults.withCredentials = true;
 

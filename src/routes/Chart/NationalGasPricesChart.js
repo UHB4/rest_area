@@ -29,7 +29,7 @@ function App() {
     const [stations, setStations] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/api/avgAllPrice')
+        axios.get('http://13.125.136.48:5000/api/avgAllPrice')
             .then(response => {
                 setStations(response.data);
             })
