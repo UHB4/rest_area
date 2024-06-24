@@ -269,8 +269,8 @@ function MainPage() {
                         </div>
                         <div className={`${styles.sub_box} fade-in`}>
                             <div className={styles.chart_sub}>
-                                <h2>내 주변 주유소</h2>
-                                <span>테스트 글임 테스트 글임 테스트 글임 테스트 글임</span>
+                                <h2>주변 주유소 찾기</h2>
+                                <span>사용자의 주변 주유소의 가격을 쉽게 비교하고 최적의 주유소를 선택할 수 있습니다.실시간 전국 평균 유가를 나타내며 고급휘발유,휘발유,자동차용경유,실내등유,자동차용부탄의 다섯가지 종류의 유가를 비교합니다.</span>
                             </div>
                         </div>
                     </div>
@@ -293,8 +293,8 @@ function MainPage() {
                         </div>
                         <div className={`${styles.sub_box3} fade-in`}>
                             <div className={styles.chart_sub3}>
-                                <h2>내 주변 주유소</h2>
-                                <span>테스트 글임 테스트 글임 테스트 글임 테스트 글임</span>
+                                <h2>7일간 유가변동 </h2>
+                                <span>유가 추세선을 제공하여 최적의 주유시점을 결정할 수 있습니다.한번에 많은 양을 충전하는 사용자들이 유가변동을 한눈에 파악할 수 있습니다.</span>
                             </div>
                         </div>
                     </div>

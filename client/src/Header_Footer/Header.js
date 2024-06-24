@@ -90,7 +90,7 @@ function Header({ setIsLogin, setUser }) {
                     <li><NavLink to="/restArea">휴게소 찾기</NavLink></li>
                     <li><NavLink to="/board">게시판</NavLink></li>
                     <li><NavLink to="/jeju">제주 어때🏝️</NavLink></li>
-                    <li><NavLink to="/sub">유가통계</NavLink></li>
+                    {/*<li><NavLink to="/sub">유가통계</NavLink></li>*/}
                 </ul>
             </div>
             <div className={styles.login_box}>
