@@ -28,12 +28,12 @@ function RestArea() {
 
 
     useEffect(() => {
-        console.log("Fetching rest areas for route:", selectedRoute);
+        console.log("매칭된 휴게소 라우트:", selectedRoute);
         if (selectedRoute) {
             axios.get(`https://stopscan.shop/api/restareas?route=${selectedRoute}`)
                 .then(response => {
                     const areas = response.data;
-                    console.log("Fetched rest areas:", areas);
+                    console.log("매칭된 휴게소:", areas);
                     Promise.all([
                         axios.get(`https://stopscan.shop/api/restbrands?routeNm=${selectedRoute}`),
                         axios.get(`https://stopscan.shop/api/fuelprices?routeNm=${selectedRoute}`),

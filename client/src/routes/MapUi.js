@@ -47,7 +47,7 @@ function MapUi() {
                         setGasStations([]);
 
                     } else {
-                        // 응답 데이터로 주유소 상태를 업데이트합니다.
+                        // 응답 데이터로 주유소 상태를 업데이트
                         setGasStations(response.data);
                     }
                 })
