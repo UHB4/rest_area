@@ -107,7 +107,7 @@ function Chatbot({onClose}) {
 
     const fetchChargingStations = async (latitude, longitude) => {
         try {
-            const response = await axios.post('http://localhost:5000/location', {
+            const response = await axios.post('https://stopscan.shop/api/location', {
                 latitude: latitude,
                 longitude: longitude
             });
@@ -128,7 +128,7 @@ function Chatbot({onClose}) {
         try {
             const response = await axios({
                 method: 'post',
-                url: 'http://localhost:5000/get_gas_stations22',
+                url: 'https://stopscan.shop/api/get_gas_stations22',
                 data: { latitude, longitude, type }
             });
 
@@ -262,7 +262,7 @@ function Chatbot({onClose}) {
             const newMessage = { id: Date.now(), text: message, sender: 'user' };
             setMessages((prevMessages) => [...prevMessages, newMessage]);
             try {
-                const response = await axios.post('http://localhost:5000/ere', { content: message });
+                const response = await axios.post('https://stopscan.shop/api/ere', { content: message });
 
                 if (response.data.status === 'success') {
                     handleMessage(response.data.answer, 'bot');

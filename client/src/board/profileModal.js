@@ -41,7 +41,7 @@ function ProfileModal({ open, onClose }) {
         formData.append('user_id', user.id);
 
         try {
-            const response = await api.post('/api/upload-profile-picture', formData, {
+            const response = await api.post('/boardApi/upload-profile-picture', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

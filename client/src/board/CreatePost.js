@@ -34,7 +34,7 @@ const CreatePost = () => {
         console.log('FormData:', Array.from(formData.entries())); // FormData 로그 추가
 
         try {
-            await api.post('/api/posts', formData, {
+            await api.post('/boardApi/posts', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

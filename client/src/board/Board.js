@@ -13,12 +13,14 @@ const Board = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get('/api/posts', {
+                const response = await api.get('/boardApi/posts', {
                     params: { page, limit }
                 });
-                setPosts(response.data);
+                const data = response.data;
+                setPosts(Array.isArray(data) ? data : []);
             } catch (error) {
                 console.error('전송실패', error);
+                setPosts([]);
             }
         };
 
@@ -28,12 +30,14 @@ const Board = () => {
     const handleSearch = async (e) => {
         e.preventDefault();
         try {
-            const response = await api.get(`/api/posts`, {
+            const response = await api.get(`/boardApi/posts`, {
                 params: { [searchType]: searchQuery, page, limit }
             });
-            setPosts(response.data);
+            const data = response.data;
+            setPosts(Array.isArray(data) ? data : []);
         } catch (error) {
             console.error(`${searchType}으로 검색실패`, error);
+            setPosts([]);
         }
     };
 

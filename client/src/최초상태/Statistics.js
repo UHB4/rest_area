@@ -27,7 +27,7 @@ function Statistics(){
 
                         <button onClick={
                             () => {
-                                axios.get('http://localhost:5000/api/Search')
+                                axios.get('https://stopscan.shop/api/Search')
                                     .then((response) => {
                                         let shoesCopy = response.data
                                         return setOilPrice(shoesCopy[0].GIS_X_COOR)
@@ -45,7 +45,7 @@ function Statistics(){
 
                         <button onClick={
                             () => {
-                                axios.get('http://localhost:5000/oill')
+                                axios.get('https://stopscan.shop/api/oill')
                                     .then((response) => {
                                         let shoesCopy = response.data
                                         return setOilPrice1(shoesCopy[1].PRICE)

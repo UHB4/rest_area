@@ -100,7 +100,7 @@ function Jeju() {
     const loadTourismSpots = async (tags = selectedCategory || selectedTags) => {
         setIsLoading(true);
         try {
-            const response = await axios.get('http://localhost:5000/api/tourism-spots');
+            const response = await axios.get('https://stopscan.shop/api/tourism-spots');
             const spots = response.data.filter(spot =>
                 spot.TAG && tags.some(tag => spot.TAG.split(/[,/]+/).includes(tag.trim()))
             );

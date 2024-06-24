@@ -15,7 +15,7 @@ function SearchOilCharge() {
     const [carWashInfo, setCarWashInfo] = useState(null);
     const audioRef = useRef(null);
     const handleSearch = () => {
-        axios.get('http://localhost:5000/api/gas-stations', {
+        axios.get('https://stopscan.shop/api/gas-stations', {
             params: {
                 code: 'F240411107',
                 out: 'json',
@@ -37,7 +37,7 @@ function SearchOilCharge() {
     };
     const handleStationClick = (station) => {
         setSelectedStation(station);
-        axios.get('http://localhost:5000/api/gas-station-detail', {
+        axios.get('https://stopscan.shop/api/gas-station-detail', {
             params: {
                 uni_id: station.uni_id,
             },

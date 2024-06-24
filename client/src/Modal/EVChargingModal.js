@@ -52,7 +52,7 @@ function EVChargingModal({ onClose }) {
 
     const fetchChargingStations = (latitude, longitude, radius) => {
         axios
-            .get('http://localhost:5000/api/charging-stations-jeju', {
+            .get('https://stopscan.shop/api/charging-stations-jeju', {
                 params: {
                     latitude: latitude,
                     longitude: longitude,

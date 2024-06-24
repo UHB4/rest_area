@@ -47,7 +47,7 @@ export default function SignUp() {
 
     const registerUser = () => {
         axios({
-            url: "http://localhost:3001/register",
+            url: "https://stopscan.shop/register",
             method: "POST",
             withCredentials: true,
             data: { email, username, password }

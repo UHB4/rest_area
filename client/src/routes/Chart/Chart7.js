@@ -32,7 +32,7 @@ function ChartLine() {
     const [oilData, setOilData] = useState({});
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/api/avgRecentPrice')
+        axios.get('https://stopscan.shop/api/avgRecentPrice')
             .then(response => {
                 setOilData(response.data);
             })

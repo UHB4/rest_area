@@ -75,7 +75,7 @@ function Chatbot() {
 
     const fetchChargingStations = async (latitude, longitude) => {
         try {
-            const response = await axios.post('http://localhost:5000/location', {
+            const response = await axios.post('https://stopscan.shop/api/location', {
                 latitude: latitude,
                 longitude: longitude
             });
@@ -96,7 +96,7 @@ function Chatbot() {
         try {
             const response = await axios({
                 method: 'post',
-                url: 'http://localhost:5000/get_gas_stations22',
+                url: 'https://stopscan.shop/api/get_gas_stations22',
                 data: { latitude, longitude, type }
             });
 
@@ -162,7 +162,7 @@ function Chatbot() {
             }
         }
         if (message.includes('고속도로 휴게소 정보 보러가기')) {
-            const RestareaUrl = "http://localhost:3000/restArea";
+            const RestareaUrl = "https://3.35.37.22:3000/restArea";
             const botResponse = {
                 id: Date.now(),
                 text: `고속도로 휴게소 정보를 확인하러 가려면 여기를 클릭하세요.`,
@@ -173,7 +173,7 @@ function Chatbot() {
             speak("고속도로 휴게소 정보 페이지 링크를 보냈습니다.");
         }
         if (message.includes('로그인 페이지로 이동하기')) {
-            const loginUrl = "http://localhost:3000/login";
+            const loginUrl = "https://3.35.37.22:3000/login";
             const botResponse = {
                 id: Date.now(),
                 text: `로그인 페이지로 이동하려면 여기를 클릭하세요.`,
@@ -184,7 +184,7 @@ function Chatbot() {
             speak("로그인 페이지 링크를 보냈습니다.");
         }
         if (message.includes('통계 차트 보러가기')) {
-            const statsUrl = "http://localhost:3000/sub";
+            const statsUrl = "https://3.35.37.22:3000/sub";
             const botResponse = {
                 id: Date.now(),
                 text: `통계 차트 페이지로 이동하려면 여기를 클릭하세요.`,
