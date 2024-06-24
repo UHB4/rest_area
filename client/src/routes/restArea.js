@@ -29,15 +29,15 @@ function RestArea() {
     useEffect(() => {
         console.log("Fetching rest areas for route:", selectedRoute);
         if (selectedRoute) {
-            axios.get(`http://localhost:5000/restareas?route=${selectedRoute}`)
+            axios.get(`https://stopscan.shop/api/restareas?route=${selectedRoute}`)
                 .then(response => {
                     const areas = response.data;
                     console.log("Fetched rest areas:", areas);
                     Promise.all([
-                        axios.get(`http://localhost:5000/restbrands?routeNm=${selectedRoute}`),
-                        axios.get(`http://localhost:5000/fuelprices?routeNm=${selectedRoute}`),
-                        axios.get(`http://localhost:5000/facilities?routeNm=${selectedRoute}`),
-                        axios.get(`http://localhost:5000/bestfoods?routeNm=${selectedRoute}`)
+                        axios.get(`https://stopscan.shop/api/restbrands?routeNm=${selectedRoute}`),
+                        axios.get(`https://stopscan.shop/api/fuelprices?routeNm=${selectedRoute}`),
+                        axios.get(`https://stopscan.shop/api/facilities?routeNm=${selectedRoute}`),
+                        axios.get(`https://stopscan.shop/api/bestfoods?routeNm=${selectedRoute}`)
                     ]).then(([brandResponse, fuelResponse, facilityResponse, bestFoodResponse]) => {
                         console.log("Fetched brand data:", brandResponse.data);
                         console.log("Fetched fuel data:", fuelResponse.data);
@@ -120,7 +120,7 @@ function RestArea() {
         useEffect(() => {
             const fetchTopRestaurants = async () => {
                 try {
-                    const response = await axios.get('http://127.0.0.1:5000/api/top-restaurants');
+                    const response = await axios.get('https://stopscan.shop/api/top-restaurants');
                     setRestaurants(response.data);
                 } catch (error) {
                     setError(error);

@@ -29,7 +29,7 @@ function MapUi() {
     const fetchStationsWithRadius = (radiusValue) => {
         navigator.geolocation.getCurrentPosition(position => {
             const {latitude, longitude} = position.coords;
-            axios.post('http://localhost:5000/get-stations', {
+            axios.post('https://stopscan.shop/api/get-stations', {
                 latitude,
                 longitude,
                 radius: radiusValue * 1000,
@@ -67,7 +67,7 @@ function MapUi() {
             });
 
             const { latitude, longitude } = position.coords;
-            const response = await axios.post('http://localhost:3001/find-stations', {
+            const response = await axios.post('https://3.35.37.22:3001/find-stations', {
                 latitude,
                 longitude,
                 radius: radius * 1000 // 미터 단위로 변환하여 서버로 전송

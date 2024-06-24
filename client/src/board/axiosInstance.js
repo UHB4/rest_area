@@ -3,7 +3,7 @@ import { store } from '../redux/store'; // Redux 스토어를 임포트하여 �
 
 // Axios 인스턴스 생성
 const api = axios.create({
-    baseURL: 'http://localhost:3001',
+    baseURL: 'https://stopscan.shop',
     withCredentials: true,
 });
 

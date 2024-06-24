@@ -21,7 +21,7 @@ import useTokenRefresh from "./board/useTokenRefresh";
 import DetailPost from './board/DetailPost'; // 상세 게시글 컴포넌트 임포트
 
 // Axios 글로벌 설정
-api.defaults.baseURL = 'http://localhost:3001';
+api.defaults.baseURL = 'https://stopscan.shop';
 api.defaults.withCredentials = true;
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
                 const userData = result.data.user;
 
                 // 프로필 이미지 URL 설정
-                const profileImageResponse = await api.get(`/api/profile-picture/${userData.id}`);
+                const profileImageResponse = await api.get(`/boardApi/profile-picture/${userData.id}`);
                 const profileImageUrl = profileImageResponse.data.profilePicture;
 
                 setUser({ ...userData, profilePicture: profileImageUrl });

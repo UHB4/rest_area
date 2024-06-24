@@ -69,7 +69,7 @@ function MainPage() {
     const fetchLocationAndData = () => {
         navigator.geolocation.getCurrentPosition(position => {
             const { latitude, longitude } = position.coords;
-            axios.post('http://localhost:5000/api/gas-stations', {
+            axios.post('https://stopscan.shop/api/gas-stations', {
                 latitude,
                 longitude
             })

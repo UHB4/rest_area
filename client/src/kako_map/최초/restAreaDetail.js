@@ -18,7 +18,7 @@ function RestAreaDetail({ selectedRoute }) {
 
     useEffect(() => {
         if (selectedRoute) {
-            axios.get(`http://localhost:5000/restareas?route=${selectedRoute}`)
+            axios.get(`https://stopscan.shop/api/restareas?route=${selectedRoute}`)
                 .then(response => {
                     setRestAreas(response.data);
                     if (response.data.length > 0) {

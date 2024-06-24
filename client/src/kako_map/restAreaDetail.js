@@ -15,9 +15,9 @@ function RestAreaDetail({ selectedRoute }) {
     const [selectedMarker, setSelectedMarker] = useState(null);
     useEffect(() => {
         if (selectedRoute) {
-            axios.get(`http://localhost:5000/restareas?route=${selectedRoute}`)
+            axios.get(`https://stopscan.shop/api/restareas?route=${selectedRoute}`)
                 .then(response => {
-                    setRestAreas(response.data);
+                    setRestAreas(response.data)
                     if (response.data.length > 0) {
                         const firstArea = response.data[0];
                         setPosition({lat: firstArea.위도, lng: firstArea.경도});
@@ -37,10 +37,10 @@ function RestAreaDetail({ selectedRoute }) {
         const normalizedAreaName = normalizeName(area.휴게소명);
 
         Promise.all([
-            axios.get(`http://localhost:5000/restbrands?routeNm=${selectedRoute}`),
-            axios.get(`http://localhost:5000/fuelprices?routeNm=${selectedRoute}`),
-            axios.get(`http://localhost:5000/facilities?routeNm=${selectedRoute}`),
-            axios.get(`http://localhost:5000/bestfoods?routeNm=${selectedRoute}`)
+            axios.get(`https://stopscan.shop/api/restbrands?routeNm=${selectedRoute}`),
+            axios.get(`https://stopscan.shop/api/fuelprices?routeNm=${selectedRoute}`),
+            axios.get(`https://stopscan.shop/api/facilities?routeNm=${selectedRoute}`),
+            axios.get(`https://stopscan.shop/api/bestfoods?routeNm=${selectedRoute}`)
         ]).then(([brandResponse, fuelResponse, facilityResponse, bestFoodResponse]) => {
             const brandData = brandResponse.data.list;
             const fuelData = fuelResponse.data.list;

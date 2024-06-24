@@ -15,7 +15,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://stopscan.shop',
     methods: ['GET', 'POST','PUT','DELETE'],
     credentials: true // 쿠키를 사용하도록 설정
 }));
@@ -24,8 +24,16 @@ app.post('/register', registerUser);
 app.post('/login', login);
 app.post('/refreshToken', refreshToken);
 app.post('/logout', logout);
-app.use('/api', userProfileController);
-app.use('/api', postsRouter)
+app.use('/boardApi', userProfileController);
+app.use('/boardApi', postsRouter)
+
+app.get('/', (req, res) => {
+    res.sendFile('C:\\JWLee\\test_folder\\git_hub_deskTop\\clone_test\\second\\rest_area\\client\\build\\index.html');
+});
+
+app.use(express.static('C:\\JWLee\\test_folder\\git_hub_deskTop\\clone_test\\second\\rest_area\\client\\build'))
+
+
 
 app.get('/protected', authenticateToken, (req, res) => {
     res.status(200).json({ message: 'Protected content', user: req.user });
@@ -148,4 +156,9 @@ app.post('/find-stations', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, ()=>{
     console.log(`server is on ${PORT}`);
+});
+
+
+app.get('*', (req, res) => {
+    res.sendFile('C:\\JWLee\\test_folder\\git_hub_deskTop\\clone_test\\second\\rest_area\\client\\build\\index.html');
 });

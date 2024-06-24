@@ -39,7 +39,7 @@ function Login(props) {
 
         try {
             // Axios를 사용하여 POST 요청을 보냅니다.
-            const response = await axios.post('http://localhost:3001/login1111', {
+            const response = await axios.post('https://3.35.37.22:3001/login1111', {
                 username: username,
                 password: password
             }).then(res=>{
