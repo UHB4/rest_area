@@ -141,11 +141,11 @@ function ProfileModal({ open,  onClose }) {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 mb: 2,
-                                mt: 3,
+                                mt: -8,
                             }}
                         >
                             <Button
-                                onClick={onclose}
+                                onClick={onClose}
                                 variant="contained"
                                 sx={{
                                     bgcolor: 'red',
